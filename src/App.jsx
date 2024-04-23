@@ -7,7 +7,7 @@ import { API_URL } from "./api/api";
 
 const numberAtom = atom(1);
 
-// аттом для получения всех покемонов
+
 const allPokemonDataAtom = atom(async () => {
   try {
     const response = await axios.get(`${API_URL}/pokemon?limit=1000`);
@@ -21,7 +21,7 @@ const allPokemonDataAtom = atom(async () => {
   }
 });
 
-// атом для получения одного покемона
+
 const pokemonDataAtom = atom(async (get) => {
   const number = get(numberAtom);
   const URL = `${API_URL}/pokemon/${number}`;
